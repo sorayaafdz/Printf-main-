@@ -6,7 +6,7 @@
 /*   By: sofernan <sofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 13:47:26 by sofernan          #+#    #+#             */
-/*   Updated: 2024/07/01 13:47:28 by sofernan         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:48:33 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,22 @@ int	ft_printf(char const *format, ...)
 {
 	va_list	args;
 	int		i;
-	int		length;
+	int		len;
 
 	va_start(args, format);
 	i = 0;
-	length = 0;
+	len = 0;
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			length += converter(format[i + 1], args);
+			len += converter(format[i + 1], args);
 			i++;
 		}
 		else
-			length += ft_putchar(format[i]);
+			len += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(args);
-	return (length);
+	return (len);
 }
