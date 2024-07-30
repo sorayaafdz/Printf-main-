@@ -6,39 +6,41 @@
 /*   By: sofernan <sofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 13:47:00 by sofernan          #+#    #+#             */
-/*   Updated: 2024/07/23 16:20:37 by sofernan         ###   ########.fr       */
+/*   Updated: 2024/07/30 19:50:18 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_hex(unsigned int num, char *base)
+int	ft_print_hex(unsigned int number, char *hex_digits)
 {
-	int	num_base[16];
+	int	base_digits[16];
 	int	i;
-	int	result;
+	int	printed_chars;
 
 	i = 0;
-	result = 0;
-	if (num == 0)
-		result += ft_putchar('0');
-	while (num)
+	printed_chars = 0;
+	if (number == 0)
+		printed_chars += ft_putchar('0');
+	while (number != 0)
 	{
-		num_base[i] = num % 16;
-		num = num / 16;
+		base_digits[i] = number % 16;
+		number = number / 16;
 		i++;
 	}
 	while (--i >= 0)
-		result += ft_putchar(base[num_base[i]]);
-	return (result);
+	{
+		printed_chars += ft_putchar(hex_digits[base_digits[i]]);
+	}
+	return (printed_chars);
 }
 /*
-int main()
+int main(void)
 {
-	unsigned int	num = 42;
-	char			*base = "0123456789ABCDEF";
+	unsigned int	number = 42;
+	char			*hex_digits = "0123456789ABCDEF";
 
-	ft_print_hex(num, base);
+	ft_print_hex(number, hex_digits);
 	ft_putchar('\n');
 	return (0);
 }*/

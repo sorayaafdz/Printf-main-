@@ -6,7 +6,7 @@
 /*   By: sofernan <sofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 13:47:26 by sofernan          #+#    #+#             */
-/*   Updated: 2024/07/23 16:48:33 by sofernan         ###   ########.fr       */
+/*   Updated: 2024/07/30 20:28:46 by sofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,19 @@ int	ft_printf(char const *format, ...)
 	va_end(args);
 	return (len);
 }
+
+/*int main(void)
+{
+    ft_printf("Char: %c\n", 'S');
+    ft_printf("String: %s\n", "Hello, 42!");
+    ft_printf("Pointer: %p\n", NULL);
+    ft_printf("Pointer: %p\n", (void *)0x12345678);
+    ft_printf("Decimal: %d\n", 12345);
+    ft_printf("Integer: %i\n", -12345);
+    ft_printf("Unsigned: %u\n", 12345);
+    ft_printf("Hex (lower): %x\n", 42);
+    ft_printf("Hex (upper): %X\n", 42);
+    ft_printf("Percent: %%\n");
+
+    return (0);
+}*/
